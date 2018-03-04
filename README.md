@@ -1,3 +1,5 @@
+[ ![Download](https://api.bintray.com/packages/alexfacciorusso/RxLifecycleDisposable/rxlifecycledisposable/images/download.svg) ](https://bintray.com/alexfacciorusso/RxLifecycleDisposable/rxlifecycledisposable/_latestVersion)
+
 # RxLifecycleDisposable
 
 Disposing disposables automatically and with style!
@@ -64,14 +66,16 @@ Add one of the following lines depending to your Gradle Android plugin version i
 `dependencies` section:
 
     // For plugin version < 3.x
-    compile ('com.alexfacciorusso:rxlifecycledisposable:0.1.0') {
+    compile ('com.alexfacciorusso:rxlifecycledisposable:latestVersion') {
         exclude group: 'com.android.support' 
     }
         
     // For plugin version >= 3.x
-    implementation ('com.alexfacciorusso:rxlifecycledisposable:0.1.0') {
+    implementation ('com.alexfacciorusso:rxlifecycledisposable:latestVersion') {
         exclude group: 'com.android.support' 
     }
+    
+Where `latestVersion` is the version you can take from the badge at the beginning of this README.
 
 
 ## License
