@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RxLifecycleDisposable</string>
+    <string name="title_activity_java">JavaActivity</string>
+</resources>
