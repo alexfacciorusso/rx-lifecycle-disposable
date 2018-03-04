@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.jfrog.bintray'
+apply plugin: 'org.jetbrains.dokka-android'
 
 
 android {
@@ -85,9 +86,31 @@ install {
     }
 }
 
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task dokkaJavadoc(type: org.jetbrains.dokka.gradle.DokkaTask) {
+    outputFormat = 'javadoc'
+    outputDirectory = "$buildDir/javadoc"
+
+    skipEmptyPackages = true
+    includeNonPublic = false
+    skipDeprecated = true
+}
+
+task javadocJar(type: Jar, dependsOn: dokkaJavadoc) {
+    classifier = 'javadoc'
+    from dokkaJavadoc.outputDirectory
+}
+
 publishing {
     publications {
         Production(MavenPublication) {
+            artifact sourcesJar
+            artifact javadocJar
+
             artifact("$buildDir/outputs/aar/${artifactId}-release.aar") {
                 builtBy assemble
             }

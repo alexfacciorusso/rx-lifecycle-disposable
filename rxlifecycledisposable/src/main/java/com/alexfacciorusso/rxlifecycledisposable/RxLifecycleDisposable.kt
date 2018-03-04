@@ -1,4 +1,4 @@
-@file:Suppress("unused", "MemberVisibilityCanPrivate")
+@file:Suppress("unused", "MemberVisibilityCanBePrivate")
 
 package com.alexfacciorusso.rxlifecycledisposable
 
@@ -47,7 +47,7 @@ class RxLifecycleDisposable @JvmOverloads constructor(
     }
 
     /**
-     * Attaches this [LifecycleObserver] to the specifiec [Lifecycle].
+     * Attaches this [LifecycleObserver] to the specified [Lifecycle].
      *
      * @param lifecycle The [Lifecycle] to listen for events.
      * @param autoRemoveObserverOnDestroy see the documentation for [RxLifecycleDisposable]
