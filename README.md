@@ -64,10 +64,14 @@ Add one of the following lines depending to your Gradle Android plugin version i
 `dependencies` section:
 
     // For plugin version < 3.x
-    compile 'com.alexfacciorusso:rxlifecycledisposable:0.1.0'
-
+    compile ('com.alexfacciorusso:rxlifecycledisposable:0.1.0') {
+        exclude group: 'com.android.support' 
+    }
+        
     // For plugin version >= 3.x
-    implementation 'com.alexfacciorusso:rxlifecycledisposable:0.1.0'
+    implementation ('com.alexfacciorusso:rxlifecycledisposable:0.1.0') {
+        exclude group: 'com.android.support' 
+    }
 
 
 ## License

@@ -5,13 +5,14 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion projTargetSdkVersion
+
     defaultConfig {
-        applicationId "com.alexfacciorusso.rxlifecycledisposable"
-        minSdkVersion 16
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        applicationId "com.alexfacciorusso.rxlifecycledisposable.sample"
+        minSdkVersion projMinSdkVersion
+        targetSdkVersion projTargetSdkVersion
+        versionCode projVersionCode
+        versionName projVersionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -24,10 +25,10 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation(project(":lib"))
+    implementation(project(":rxlifecycledisposable")) { exclude group: 'com.android.support' }
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support:design:26.1.0'
+    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
+    implementation "com.android.support:design:$supportLibraryVersion"
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
     testImplementation 'junit:junit:4.12'

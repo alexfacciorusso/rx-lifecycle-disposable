@@ -1,8 +1,11 @@
-package com.alexfacciorusso.rxlifecycledisposable
+package com.alexfacciorusso.rxlifecycledisposable.sample
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import com.alexfacciorusso.rxlifecycledisposable.RxLifecycleDisposable
+import com.alexfacciorusso.rxlifecycledisposable.RxLifecycleDisposableProvider
+import com.alexfacciorusso.rxlifecycledisposable.disposeOnLifecycleStop
 import io.reactivex.Observable
 import java.util.concurrent.TimeUnit
 
